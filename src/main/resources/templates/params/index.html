@@ -12,6 +12,12 @@
     <li>
         <a th:href="@{/params/string(text='Godbye from index!!')}">Say goodbye to the String webpage!</a>
     </li>
+    <li>
+        <a th:href="@{/params/multiparam(string='Hello!!',number=5)}">Pass multiple parameters!</a>
+    </li>
+    <li>
+        <a th:href="@{/params/multiparam-with-request(string='Hello!!',number=8)}">Pass multiple parameters!</a>
+    </li>
 </ul>
 
 </body>

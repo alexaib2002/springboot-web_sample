@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Display HTTP GET path variables</title>
+</head>
+<body>
+<h1>Display HTTP GET path variables</h1>
+<ul>
+    <li>
+        <a th:href="@{/paths/string/firstdir}">'firstdir' dynamic directory</a>
+    </li>
+    <li>
+        <!-- Single path declaration with nested variables (note __${}__ -->
+        <a th:href="@{/paths/string/seconddir/__${number}__}">'seconddir/7' dynamic directory</a>
+    </li>
+</ul>
+</body>
+</html>
