@@ -1,6 +1,7 @@
 package org.alexaib.springlearn.springweblearn.controllers;
 
 import org.alexaib.springlearn.springweblearn.model.User;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,26 +12,35 @@ import java.util.Arrays;
 import java.util.List;
 
 @Controller
-@RequestMapping("/app")
+@RequestMapping({"", "/app"})
 public class IndexController {
+
+    @Value("${msg.index_controller.index.title}")
+    private String indexStr;
+
+    @Value("${msg.index_controller.profile.title}")
+    private String profileStr;
+
+    @Value("${msg.index_controller.list.title}")
+    private String listStr;
 
     @GetMapping({"", "/", "/index", "/home"})
     public String index(Model model) {
-        model.addAttribute("title", "Hello Spring Framework from Controller!");
+        model.addAttribute("title", indexStr);
         return "index";
     }
 
     @GetMapping("/profile")
     public String profile(Model model) {
         User user = new User("Marcos", "Robles", "marcos@email.net");
-        model.addAttribute("title", String.format("Welcome again, %s", user.name()));
+        model.addAttribute("title", String.format(profileStr, user.name()));
         model.addAttribute("user", user);
         return "profile";
     }
 
     @GetMapping("/list")
     public String list(Model model) {
-        model.addAttribute("title", "User list");
+        model.addAttribute("title", listStr);
         return "list";
     }
 

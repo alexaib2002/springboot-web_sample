@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>My Spring Framework Webapp</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 </head>
 <body>
-    <h1 th:text="${title}"></h1>
+<h1 class="red-color" th:text="${title}"></h1>
+<h2 class="blue-color">CSS Static Resources styling</h2>
+<img th:src="@{/img/spring.png}"  alt="Spring image"/>
 </body>
 </html>
