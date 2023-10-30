@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Controller
-@RequestMapping({"", "/app"})
+@RequestMapping({"/app"})
 public class IndexController {
 
     @Value("${msg.index_controller.index.title}")
